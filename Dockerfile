@@ -17,7 +17,9 @@ RUN mkdir -p /usr/local/bin \
  && rm -Rf /root/convoy
 # -- add dm helper script
 ADD files/dm_dev_partition.sh /
-# -- set entrypoint to convoy executable so other options can be passed through CMD
-# ENTRYPOINT /usr/loca/bin/convoy
 # -- add the start script
-ADD start.sh /
+ADD entrypoint-options.sh /
+# -- set entrypoint to convoy executable so other options can be passed through CMD
+ENTRYPOINT ["/usr/local/bin/convoy"]
+# -- set command options
+CMD ["/entrypoint-options.sh"]
