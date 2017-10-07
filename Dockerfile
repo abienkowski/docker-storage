@@ -20,6 +20,7 @@ RUN mkdir -p /usr/local/bin \
 ADD files/dm_dev_partition.sh /
 # -- add the start script
 ADD entrypoint-options.sh /
+RUN chmod +x /entrypoint-options.sh
 # -- set entrypoint to convoy executable so other options can be passed through CMD
 ENTRYPOINT ["/usr/local/bin/convoy"]
 # -- set command options
