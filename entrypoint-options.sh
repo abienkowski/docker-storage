@@ -1,4 +1,8 @@
 #!/bin/sh
+# -- NOTE: make the convoy executable accessible from host
+# -- copy executables to mounted volume at /usr/local/bin
+ln /root/convoy/convoy /usr/local/bin/convoy
+ln /root/convoy/convoy-pdata_tools /usr/local/bin/convoy-pdata_tools
 # -- run devicemapper help script to setup the device
 if [[ ! -f /dev/${CONVOY_DEVICE}1 ]]; then
   echo "Creating new partition on the storage device..."

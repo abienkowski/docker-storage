@@ -11,11 +11,6 @@ MAINTAINER Adrian Bienkowski (abienkow@uwo.ca)
 ENV CONVOY_DEVICE=sdb
 # -- extract the released package onto the docker filesystem
 ADD files/convoy.tar.gz /root/
-# -- copy executables to executable path and remove temporary files
-RUN mkdir -p /usr/local/bin \
- && cp /root/convoy/convoy /usr/local/bin/convoy \
- && cp /root/convoy/convoy-pdata_tools /usr/local/bin/convoy-pdata_tools \
- && rm -Rf /root/convoy
 # -- add dm helper script
 ADD files/dm_dev_partition.sh /
 # -- add the start script
