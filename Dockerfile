@@ -1,4 +1,5 @@
-FROM busybox
+FROM debian:stretch
+MAINTAINER Adrian Bienkowski (abienkow@uwo.ca)
 # --
 # -- NOTE: this image should be run with -v /etc/docker/plugins:/etc/docker/plugins
 # --   so that the container can be responsible for setting itself up as a volume plugin
